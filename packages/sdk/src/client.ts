@@ -73,7 +73,7 @@ export class LineHarness {
    * @param redirect - URL to redirect after completion
    */
   getAuthUrl(options?: { ref?: string; redirect?: string }): string {
-    const url = new URL(`${this.apiUrl}/auth/line`)
+    const url = new url(`${this.apiUrl}/auth/line`)
     if (options?.ref) url.searchParams.set('ref', options.ref)
     if (options?.redirect) url.searchParams.set('redirect', options.redirect)
     return url.toString()
