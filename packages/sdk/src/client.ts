@@ -11,7 +11,6 @@ import { StaffResource } from './resources/staff.js'
 import { ImagesResource } from './resources/images.js'
 import { Workflows } from './workflows.js'
 import type { LineHarnessConfig, StepDefinition, ScenarioTriggerType, ScenarioWithSteps, Broadcast, MessageType, SegmentCondition } from './types.js'
-import { URL } from 'node:url';
 
 export class LineHarness {
   readonly friends: FriendsResource
@@ -74,7 +73,7 @@ export class LineHarness {
    * @param redirect - URL to redirect after completion
    */
   getAuthUrl(options?: { ref?: string; redirect?: string }): string {
-    const url = new URL(`${this.apiUrl}/auth/line`)
+    const url = new globalThis.URL(endpoint, this.baseUrl);
     if (options?.ref) url.searchParams.set('ref', options.ref)
     if (options?.redirect) url.searchParams.set('redirect', options.redirect)
     return url.toString()
