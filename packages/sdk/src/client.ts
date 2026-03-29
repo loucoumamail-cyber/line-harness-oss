@@ -11,6 +11,7 @@ import { StaffResource } from './resources/staff.js'
 import { ImagesResource } from './resources/images.js'
 import { Workflows } from './workflows.js'
 import type { LineHarnessConfig, StepDefinition, ScenarioTriggerType, ScenarioWithSteps, Broadcast, MessageType, SegmentCondition } from './types.js'
+import { URL } from 'node:url';
 
 export class LineHarness {
   readonly friends: FriendsResource
